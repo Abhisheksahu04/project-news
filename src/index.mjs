@@ -1,8 +1,11 @@
 import express from 'express';
 import NewsAPI from 'newsapi';
 import 'dotenv/config';
+import cors from 'cors';
+
 
 const app = express();
+app.use(cors());
 const newsapi = new NewsAPI(process.env.API_KEY);
 
 app.get('/', (req, res) => {
