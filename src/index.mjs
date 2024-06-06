@@ -3,7 +3,7 @@ import NewsAPI from 'newsapi';
 import 'dotenv/config';
 
 const app = express();
-const newsapi = new NewsAPI('99ad5d6351e849c8a1b6f67080985aa6');
+const newsapi = new NewsAPI(process.env.API_KEY);
 
 app.get('/', (req, res) => {
     newsapi.v2.topHeadlines({
